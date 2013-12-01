@@ -1,0 +1,34 @@
+<h1>Balanced Risks - Tasks for:</h1>
+<h2><%= @project.name %></h2>
+
+<p id="notice"><%= notice %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task Name</th>
+      <th>Average Effort</th>
+      <th>Worst Case</th>
+	  <th>Risk Index</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+	<tr>
+		<td><%= task.name %></td>
+		<td><%= task.lower %></td>
+		<td><%= task.upper %></td>
+		<td><%= task.error %></td>
+		<td><%= link_to 'Show', project_task_path(id: :task_id) %></td>
+        <td><%= link_to 'Edit', edit_project_task_path(id: :task_id) %></td>
+        <td><%= link_to 'Destroy', project_task_path(id: :task_id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		<td><%= link_to 'Sub Task'%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task', new_project_task_path %>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TocCalc</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="container">
+		<div class="side_bar_top">
+		</div>	
+		<div class="side_bar">
+		</div>
+		<div class="header">
+			<div class="logo">		
+				<%= image_tag 'Master_PO4_Logo.png', size: '90x60', alt: 'PO4 Management' %>		
+			</div>
+		</div>
+		<div class="menu_bar">
+			<ul>
+				<li><a href=/static_pages/home >Home</a></li>
+				<li><a href=/static_pages/services >Services</a></li>
+				<li><a href=/static_pages/tools >Tools</a></li>
+				<li><a href=/static_pages/about >About</a></li>
+				<li><a href=/static_pages/papers >Papers</a></li>
+				<li><a href=/static_pages/contact_us >Contact Us</a></li>
+			</ul>
+		</div>
+		<div class="main">
+			<div class="display">
+				<%= yield %>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+			<p>&copy   PO4 Mangement Limited, 23 Selsey Avenue, Southsea HAMPSHIRE. PO4 9QL</p>
+			<p>Company Registration Number: xxxxxxxx  ::  VAT: vvvvvvvvv</p>
+	</div>
+</body>
+</html>

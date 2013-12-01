@@ -1,0 +1,27 @@
+<h1>Balanced Risks - Projects</h1>
+
+<p id="notice"><%= notice %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+		<td><%= project.name %></td>
+        <td><%= link_to 'Detail', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+		<td><%= link_to 'Show Tasks', project_tasks_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project', new_project_path %>
